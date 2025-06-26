@@ -38,6 +38,12 @@ jobs:
         name: codecov-coverage
         fail_ci_if_error: true
 
+    - name: Generate Test badge
+      uses: gaelgirodon/ci-badges-action@v1
+      with:
+        gist-id: ${{ secrets.GIST_ID }} 
+        token: ${{ secrets.GIST_TOKEN }}
+
   deploy-pages:
     needs: build
     runs-on: ubuntu-latest
