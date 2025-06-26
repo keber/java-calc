@@ -69,7 +69,7 @@
 		<artifactId>maven-surefire-report-plugin</artifactId>
 		<version>3.2.5</version>
 		<configuration>
-    		    <reportsDirectory>${project.build.directory}/site/surefire-report</outputDirectory>
+    		    <outputDirectory>${project.build.directory}/site/surefire-report</outputDirectory>
 		</configuration>
 		<executions>
     		    <execution>
