@@ -55,9 +55,15 @@ jobs:
     - name: Build and generate report
       run: mvn clean verify
 
-    - name: Deploy JaCoCo report to GitHub Pages
+    - name: Combine JaCoCo and Surefire reports
+      run: |
+        mkdir -p target/site/combined
+        cp -r target/site/jacoco target/site/combined/coverage
+        cp -r target/site/surefire-report target/site/combined/tests
+
+    - name: Deploy reports to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./target/site/jacoco
+        publish_dir: ./target/site/combined
 
