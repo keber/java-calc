@@ -2,3 +2,4 @@
 
 [![codecov](https://codecov.io/gh/keber/java-calc/graph/badge.svg?token=3W9H1UE0FA)](https://codecov.io/gh/keber/java-calc)
 [![Java CI](https://github.com/keber/java-calc/actions/workflows/test.yml/badge.svg)](https://github.com/keber/java-calc/actions/workflows/test.yml)
+[![Tests](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Fkeber%2Fbf1bff0a38948277a263377401536440%2Fraw%2Fjava-calc-junit-tests.json)](https://keber.github.io/java-calc/tests/)
