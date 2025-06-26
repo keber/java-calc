@@ -38,3 +38,26 @@ jobs:
         name: codecov-coverage
         fail_ci_if_error: true
 
+  deploy-pages:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Build and generate report
+      run: mvn clean verify
+
+    - name: Deploy JaCoCo report to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./target/site/jacoco
+
